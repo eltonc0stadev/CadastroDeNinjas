@@ -1,6 +1,9 @@
-package dev.eltoncosta.cadastrodeninjas;
+package dev.eltoncosta.cadastrodeninjas.Ninjas;
 
+import dev.eltoncosta.cadastrodeninjas.Missoes.MissaoModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_cadastro")
@@ -12,6 +15,9 @@ public class NinjaModel {
     private String nome;
     private String email;
     private int idade;
+    @ManyToOne
+    @JoinColumn(name = "missao_id")
+    private MissaoModel missao;
 
     public NinjaModel() {
     }
@@ -20,6 +26,11 @@ public class NinjaModel {
         this.nome = nome;
         this.email = email;
         this.idade = idade;
+    }
+
+    public NinjaModel(String nome, String email, int idade, MissaoModel missao) {
+        this(nome, email, idade);
+        this.missao = missao;
     }
 
     public String getNome() {
