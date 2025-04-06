@@ -10,12 +10,12 @@ public class Controller {
 
     @GetMapping("/")
     public String inicio(){
-        return "Inicio";
+        return "Inicio<br><a href=\"/boasvindas\">boas vindas</a>";
     }
 
     @GetMapping("/boasvindas")
-    public String boasVindas(){
-        return "Boas Vindas";
+    public String boasVindas() {
+        return "Boas Vindas<br><a href=\"/\">Voltar para a página inicial</a>";
     }
 
 }
