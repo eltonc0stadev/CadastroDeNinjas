@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class NinjaController {
 
     @GetMapping("/")
-    public String inicio(){
-        return "Inicio<br><a href=\"/boasvindas\">boas vindas</a>";
-    }
+    public String inicio(){ return "Inicio<br><a href=\"/boasvindas\">boas vindas</a>"; }
 
     @GetMapping("/boasvindas")
     public String boasVindas() {
