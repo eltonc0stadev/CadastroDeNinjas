@@ -29,21 +29,21 @@ public class NinjaController {
     // Procurar ninja por ID
 
     @GetMapping("/buscar/{id}")
-    public NinjaModel buscarNinja(@PathVariable Long id) {
+    public NinjaDTO buscarNinja(@PathVariable Long id) {
         return ninjaService.buscarNinja(id);
     }
 
     // Mostrar todos os ninjas
 
     @GetMapping("/listar")
-    public List<NinjaModel> buscarTodosOsNinjas() {
+    public List<NinjaDTO> buscarTodosOsNinjas() {
         return ninjaService.listarNinjas();
     }
 
     // Alterar dados dos ninjas
 
     @PutMapping("/alterar/{id}")
-    public NinjaModel atualizarNinja(@PathVariable Long id, @RequestBody NinjaModel ninjaAtualizado) {
+    public NinjaDTO atualizarNinja(@PathVariable Long id, @RequestBody NinjaDTO ninjaAtualizado) {
         return ninjaService.atualizarNinja(id, ninjaAtualizado);
     }
 
