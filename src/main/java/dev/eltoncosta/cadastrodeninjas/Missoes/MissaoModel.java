@@ -1,5 +1,7 @@
 package dev.eltoncosta.cadastrodeninjas.Missoes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import dev.eltoncosta.cadastrodeninjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
 import lombok.*;
@@ -13,7 +15,7 @@ import java.util.List;
 @Data
 public class MissaoModel {
 
-    //niveis: S -> 1, A -> 2, B -> 3, C -> 4
+    //niveis: S, A , B , C
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +31,7 @@ public class MissaoModel {
     @Column(name = "nivel")
     private String nivel;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "missao")
     private List<NinjaModel> ninjas;
 
